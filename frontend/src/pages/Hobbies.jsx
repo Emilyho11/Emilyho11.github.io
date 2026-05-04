@@ -1,20 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import ContentContainer from '../components/ContentContainer';
-import GameSwitch from '../components/GameSwitch';
-import HobbyGame from '../components/HobbyGame';
-import HobbyList from '../components/HobbyList';
+import React from 'react'
 
 const Hobbies = () => {
-  const [isGame, setIsGame] = useState(true);
-
   return (
-    <>
-      <GameSwitch isGame={isGame} setIsGame={setIsGame} />
-      <ContentContainer>
-        {isGame ? <HobbyGame /> : <HobbyList />}
-      </ContentContainer>
-    </>
-  );
+    <div>Hobbies</div>
+  )
 }
 
-export default Hobbies;
+export default Hobbies

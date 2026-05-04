@@ -9,8 +9,7 @@
 
   color-scheme: light dark;
 	color: rgba(0, 0, 0, 0.87);
-	background-color: #D5DADE;
-
+	background: radial-gradient(circle at 20% 40%, #0B0B1A, transparent 60%), radial-gradient(circle at 80% 20%, #34046c, transparent 60%);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -18,32 +17,30 @@
   overflow-y: scroll;
 }
 
-a {
-  font-weight: 500;
-  color: #D0E4F3;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #54a4fa;
-}
-
-body {
-	margin: 0;
-	min-width: 50vw;
-	min-height: 100vh;
-}
-
-h1 {
-	font-size: 3.5rem;
-	font-weight: 600;
-}
-
-h2 {
-	font-size: 2rem;
-	font-weight: 400;
-}
-
-h3 {
-	font-size: 1.3rem;
-	font-weight: 200;
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 2px; height: 2px; /* Small dot */
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.7;
+  background: white;
+  border-radius: 50%;
+  box-shadow:
+    20vw 10vh white,
+    40vw 80vh #fff,
+    60vw 20vh #fff,
+    80vw 60vh #fff,
+    10vw 90vh #fff,
+    90vw 30vh #fff,
+    50vw 50vh #fff,
+    70vw 40vh #fff,
+    30vw 70vh #fff,
+    60vw 60vh #fff,
+    80vw 20vh #fff,
+    15vw 50vh #fff,
+    85vw 85vh #fff,
+    25vw 25vh #fff,
+    75vw 75vh #fff;
 }
