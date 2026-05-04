@@ -42,5 +42,21 @@ body::before {
     15vw 50vh #fff,
     85vw 85vh #fff,
     25vw 25vh #fff,
-    75vw 75vh #fff;
+    75vw 75vh #fff,
+    20vw 100vh #fff;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeUp {
+  animation: fadeUp 0.5s ease-out;
 }

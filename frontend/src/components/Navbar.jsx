@@ -23,7 +23,7 @@ const Navbar = () => {
               key={index}
               smooth
               to={link.to}
-              className="active text-light_blue hover:text-links"
+              className="active text-light_blue hover:text-main_purple"
             >
               {link.text}
             </HashLink>
@@ -34,7 +34,7 @@ const Navbar = () => {
               className={({ isActive }) =>
                 [
                   !isActive ? 'active' : 'font-bold underline',
-                  'text-light_blue hover:text-links'
+                  'text-light_blue hover:text-main_purple'
                 ].join(' ')
               }
             >
@@ -44,8 +44,8 @@ const Navbar = () => {
         ))}
       </div>
       <div className="md:hidden flex items-center absolute top-0 right-0 m-4">
-        <button onClick={() => setIsOpen(!isOpen)} className="text-light_blue hover:text-links focus:outline-none">
-          <FontAwesomeIcon icon={faBars} className="text-2xl text-light_blue hover:text-links" />
+        <button onClick={() => setIsOpen(!isOpen)} className="text-light_blue hover:text-main_purple focus:outline-none">
+          <FontAwesomeIcon icon={faBars} className="text-2xl text-light_blue hover:text-main_purple" />
         </button>
       </div>
       {isOpen && (
@@ -57,7 +57,7 @@ const Navbar = () => {
                 smooth
                 to={link.to}
                 onClick={() => setIsOpen(false)}
-                className="active text-light_blue hover:text-links py-2 px-4"
+                className="active text-light_blue hover:text-main_purple py-2 px-4"
               >
                 {link.text}
               </HashLink>
@@ -69,7 +69,7 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   [
                     !isActive ? 'active' : 'font-bold underline',
-                    'py-2 px-4 text-light_blue hover:text-links'
+                    'py-2 px-4 text-light_blue hover:text-main_purple'
                   ].join(' ')
                 }
               >
