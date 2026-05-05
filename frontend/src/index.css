@@ -9,7 +9,7 @@
 
   color-scheme: light dark;
 	color: rgba(0, 0, 0, 0.87);
-	background: radial-gradient(circle at 20% 40%, #0B0B1A, transparent 60%), radial-gradient(circle at 80% 20%, #34046c, transparent 60%);
+	background: radial-gradient(circle at 20% 40%, #0B0B1A, transparent 60%), radial-gradient(circle at 90% 10%, #502d78, transparent 60%);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

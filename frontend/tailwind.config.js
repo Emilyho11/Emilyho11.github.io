@@ -5,10 +5,9 @@ export default {
 		extend: {
 			colors: {
 				main_purple: "#9D81FF",
+				light_purple: "#B6A8DF",
+				buttons_purple: "#74669c",
 				dark_blue_background: "#0B0B1A",
-				dark_blue: "#2A2F4F",
-				back_light_blue: "#D0E4F3",
-				light_blue: "#EBF1F5",
 				gray: "#D5DADE",
 				links: "#54a4fa",
 			},

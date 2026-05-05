@@ -2,28 +2,73 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link'; // Import HashLink
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [aboutDropdown, setAboutDropdown] = useState(false);
+  const [aboutMobileDropdown, setAboutMobileDropdown] = useState(false);
 
   const myLinks = [
-    { to: '/', text: 'About', type: 'nav' },
     { to: '/projects', text: 'Projects', type: 'nav' },
     { to: '/hobbies', text: 'Hobbies', type: 'nav' },
-    { to: '/#ContactMeSection', text: 'Contact Me', type: 'hash' } // Change to HashLink
+    { to: '/#contact-section', text: 'Contact Me', type: 'hash' } // Change to HashLink
   ];
 
   return (
     <div className="header w-full h-[60px] relative">
       <div className="m-4 absolute top-0 right-0 gap-14 text-lg hidden md:flex text-white">
+        <div className='relative' onClick={() => setAboutDropdown(!aboutDropdown)}>
+          <NavLink
+            to="/"
+            end
+            className={({ isActive }) =>
+              [
+                isActive ? 'font-bold underline' : '',
+                'cursor-pointer text-white hover:underline select-none flex items-center gap-1'
+              ].join(' ')
+            }
+            style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}
+          >
+            Home
+            <FontAwesomeIcon icon={aboutDropdown ? faChevronUp : faChevronDown} className="ml-1" />
+          </NavLink>
+          {aboutDropdown && (
+            <div className="absolute top-full right-0 mt-2 w-48 bg-buttons_purple rounded-lg shadow-lg flex flex-col text-lg z-20">
+              <HashLink
+                smooth
+                to="/#intro-section"
+                className="py-2 px-4 text-white hover:underline"
+                onClick={() => setAboutDropdown(false)}
+              >
+                About
+              </HashLink>
+              <HashLink
+                smooth
+                to="/#experience-section"
+                className="py-2 px-4 text-white hover:underline"
+                onClick={() => setAboutDropdown(false)}
+              >
+                Work Experience
+              </HashLink>
+              <HashLink
+                smooth
+                to="/#skills-section"
+                className="py-2 px-4 text-white hover:underline"
+                onClick={() => setAboutDropdown(false)}
+              >
+                Skills
+              </HashLink>
+            </div>
+          )}
+        </div>
         {myLinks.map((link, index) => (
           link.type === 'hash' ? (
             <HashLink
               key={index}
               smooth
               to={link.to}
-              className="active text-light_blue hover:text-main_purple"
+              className="active text-white hover:underline"
             >
               {link.text}
             </HashLink>
@@ -34,7 +79,7 @@ const Navbar = () => {
               className={({ isActive }) =>
                 [
                   !isActive ? 'active' : 'font-bold underline',
-                  'text-light_blue hover:text-main_purple'
+                  'text-white hover:underline'
                 ].join(' ')
               }
             >
@@ -43,42 +88,73 @@ const Navbar = () => {
           )
         ))}
       </div>
-      <div className="md:hidden flex items-center absolute top-0 right-0 m-4">
-        <button onClick={() => setIsOpen(!isOpen)} className="text-light_blue hover:text-main_purple focus:outline-none">
-          <FontAwesomeIcon icon={faBars} className="text-2xl text-light_blue hover:text-main_purple" />
-        </button>
-      </div>
-      {isOpen && (
-        <div className="md:hidden absolute top-12 right-4 w-48 bg-dark_blue rounded-lg shadow-lg flex flex-col text-lg">
-          {myLinks.map((link, index) => (
-            link.type === 'hash' ? (
-              <HashLink
-                key={index}
-                smooth
-                to={link.to}
-                onClick={() => setIsOpen(false)}
-                className="active text-light_blue hover:text-main_purple py-2 px-4"
-              >
-                {link.text}
-              </HashLink>
-            ) : (
-              <NavLink
-                key={index}
-                to={link.to}
-                onClick={() => setIsOpen(false)}
-                className={({ isActive }) =>
-                  [
-                    !isActive ? 'active' : 'font-bold underline',
-                    'py-2 px-4 text-light_blue hover:text-main_purple'
-                  ].join(' ')
-                }
-              >
-                {link.text}
-              </NavLink>
-            )
-          ))}
+      <div className="text-white">
+        <div className="md:hidden flex items-center absolute top-0 right-0 m-4">
+          <button onClick={() => setIsOpen(!isOpen)} className="text-white hover:underline focus:outline-none">
+            <FontAwesomeIcon icon={faBars} className="text-2xl text-white hover:underline" />
+          </button>
         </div>
-      )}
+        {isOpen && (
+          <div className="md:hidden absolute top-12 right-4 w-48 bg-buttons_purple rounded-lg shadow-lg flex flex-col text-lg">
+            <div>
+              <div
+                className="py-2 px-4 text-white hover:underline flex justify-between items-center cursor-pointer"
+                onClick={() => setAboutMobileDropdown(!aboutMobileDropdown)}
+              >
+                About
+                <span>{aboutMobileDropdown ? <FontAwesomeIcon icon={faChevronUp} /> : <FontAwesomeIcon icon={faChevronDown} />}</span>
+              </div>
+              {aboutMobileDropdown && (
+                <div className="flex flex-col pl-4">
+                  <HashLink
+                    smooth
+                    to="/#experience-section"
+                    className="py-2 px-4 text-white hover:underline"
+                    onClick={() => setAboutMobileDropdown(false)}
+                  >
+                    Work Experience
+                  </HashLink>
+                  <HashLink
+                    smooth
+                    to="/#skills-section"
+                    className="py-2 px-4 text-white hover:underline"
+                    onClick={() => setAboutMobileDropdown(false)}
+                  >
+                    Skills
+                  </HashLink>
+                </div>
+              )}
+            </div>
+            {myLinks.map((link, index) => (
+              link.type === 'hash' ? (
+                <HashLink
+                  key={index}
+                  smooth
+                  to={link.to}
+                  onClick={() => setIsOpen(false)}
+                  className="active text-white hover:underline py-2 px-4"
+                >
+                  {link.text}
+                </HashLink>
+              ) : (
+                <NavLink
+                  key={index}
+                  to={link.to}
+                  onClick={() => setIsOpen(false)}
+                  className={({ isActive }) =>
+                    [
+                      !isActive ? 'active' : 'font-bold underline',
+                      'py-2 px-4 text-white hover:underline'
+                    ].join(' ')
+                  }
+                >
+                  {link.text}
+                </NavLink>
+              )
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 };
