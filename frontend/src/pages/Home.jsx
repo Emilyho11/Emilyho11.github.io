@@ -67,7 +67,7 @@ const Home = () => {
       </section>
 
       {/* Skills Section */}
-      <section id="skills-section" className="py-20 text-white">
+      <section id="skills-section" className="py-20 text-white h-screen">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-4xl font-bold mb-6">Skills</h2>
           <div className="flex flex-wrap gap-4">

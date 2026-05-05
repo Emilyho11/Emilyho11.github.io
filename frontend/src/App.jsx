@@ -5,11 +5,13 @@ import Projects from './pages/Projects.jsx'
 import Hobbies from './pages/Hobbies.jsx'
 import { HashRouter, Routes, Route } from "react-router-dom";
 import Footer from './components/Footer.jsx'
+import Stars from './components/Stars.jsx';
 
 function App() {
 
   return (
     <>
+      <Stars />
       <HashRouter>
         <Navbar/>
         <Routes>
