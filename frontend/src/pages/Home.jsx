@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react'
 import profilePic from '../assets/images/profile_picture.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import clioLogo from '../assets/images/logos/clio_logo.jpg';
+import arctiqLogo from '../assets/images/logos/arctiq_logo.jpg';
+import cccLogo from '../assets/images/logos/ccc_logo.png';
 
 const Home = () => {
   const myRoles = ['Software Engineer', 'Site Reliability Engineer', 'DevOps Engineer', 'UofT CS Graduate'];
@@ -55,14 +58,32 @@ const Home = () => {
       </section>
       
       {/* Experience Section */}
-      <section id="experience-section" className="py-20 text-white">
-        <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-6">Experience</h2>
-          <ul className="list-disc pl-6 space-y-2">
-            <li>Site Reliability Engineer at Clio</li>
-            <li>DevOps Engineer at Arctiq</li>
-            <li>Software Engineer at Crystal Claire Cosmetics</li>
-          </ul>
+      <section id="experience-section" className="py-20 text-white h-screen">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold mb-12 text-center">My Work Experience</h2>
+          <div className='flex gap-8 pb-4 justify-center flex-wrap'>
+            {/* Card 1 */}
+            <div className='w-80 bg-white/20 rounded-lg p-8 flex flex-col items-center text-center hover:scale-105 duration-300'>
+              <img src={clioLogo} alt="Clio Logo" className="w-16 h-16 mb-4 rounded-full bg-white object-contain" />
+              <h3 className="text-2xl font-bold mb-2">Site Reliability Engineer</h3>
+              <p className="text-lg text-gray mb-2">Clio</p>
+              <p className="text-lg text-gray mb-2">September 2024 – April 2025</p>
+            </div>
+            {/* Card 2 */}
+            <div className='w-80 bg-white/20 rounded-lg p-8 flex flex-col items-center text-center hover:scale-105 duration-300'>
+              <img src={arctiqLogo} alt="Arctiq Logo" className="w-16 h-16 mb-4 rounded-full bg-white object-contain" />
+              <h3 className="text-2xl font-bold mb-2">DevOps Engineer</h3>
+              <p className="text-lg text-gray mb-2">Arctiq</p>
+              <p className="text-lg text-gray mb-2">January 2024 – April 2024</p>
+            </div>
+            {/* Card 3 */}
+            <div className='w-80 bg-white/20 rounded-lg p-8 flex flex-col items-center text-center hover:scale-105 duration-300'>
+              <img src={cccLogo} alt="ccc Logo" className="w-16 h-16 mb-4 rounded-full bg-white object-contain p-3" />
+              <h3 className="text-2xl font-bold mb-2">Software Engineer</h3>
+              <p className="text-lg text-gray mb-2">Crystal Claire Cosmetics Inc.</p>
+              <p className="text-lg text-gray mb-2">May 2023 – August 2023</p>
+            </div>
+          </div>
         </div>
       </section>
 
