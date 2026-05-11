@@ -60,3 +60,7 @@ body::before {
 .animate-fadeUp {
   animation: fadeUp 0.5s ease-out;
 }
+
+.stars-popup-bg {
+  background: radial-gradient(circle at 20% 40%, #313156, transparent 90%), radial-gradient(circle at 90% 10%, #51396f);
+}

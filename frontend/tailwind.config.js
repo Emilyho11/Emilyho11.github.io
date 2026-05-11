@@ -7,6 +7,7 @@ export default {
 				main_purple: "#9D81FF",
 				light_purple: "#B6A8DF",
 				buttons_purple: "#74669c",
+				dark_purple: "#432659",
 				dark_blue_background: "#0B0B1A",
 				gray: "#D5DADE",
 				links: "#54a4fa",

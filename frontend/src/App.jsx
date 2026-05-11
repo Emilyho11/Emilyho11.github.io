@@ -6,6 +6,7 @@ import Hobbies from './pages/Hobbies.jsx'
 import { HashRouter, Routes, Route } from "react-router-dom";
 import Footer from './components/Footer.jsx'
 import Stars from './components/Stars.jsx';
+import Experience from './pages/Experience.jsx';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/hobbies" element={<Hobbies />} />
+          <Route path="/experience/:id" element={<Experience />} />
         </Routes>
       </HashRouter>
       <Footer />
