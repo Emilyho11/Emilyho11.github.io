@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link'; // Import HashLink
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { use } from 'react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [aboutDropdown, setAboutDropdown] = useState(false);
   const [aboutMobileDropdown, setAboutMobileDropdown] = useState(false);
+  const aboutRef = useRef(null);
 
   const myLinks = [
     { to: '/projects', text: 'Projects', type: 'nav' },
@@ -15,10 +17,24 @@ const Navbar = () => {
     { to: '/#contact-section', text: 'Contact Me', type: 'hash' } // Change to HashLink
   ];
 
+  // Hide dropdown when clicking outside
+  function handkeClickOutside(event) {
+    if (aboutRef.current && !aboutRef.current.contains(event.target)) {
+      setAboutDropdown(false);
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handkeClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handkeClickOutside);
+    };
+  }, []);
+
   return (
     <div className="header w-full h-[60px] relative">
       <div className="m-4 absolute top-0 right-0 gap-14 text-lg hidden md:flex text-white">
-        <div className='relative' onClick={() => setAboutDropdown(!aboutDropdown)}>
+        <div className='relative' ref={aboutRef} onClick={() => setAboutDropdown(!aboutDropdown)}>
           <NavLink
             to="/"
             end
@@ -31,7 +47,7 @@ const Navbar = () => {
             style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}
           >
             Home
-            <FontAwesomeIcon icon={aboutDropdown ? faChevronUp : faChevronDown} className="ml-1" />
+            <FontAwesomeIcon icon={aboutDropdown ? faChevronUp : faChevronDown} className="ml-1 hover:text-main_purple" />
           </NavLink>
           {aboutDropdown && (
             <div className="absolute top-full right-0 mt-2 w-48 bg-buttons_purple rounded-lg shadow-lg flex flex-col text-lg z-20">
