@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { experiences } from '../data/experiences';
 import ContentContainer from '../components/ContentContainer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendar, faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { faBriefcase, faCalendar, faLocationDot } from '@fortawesome/free-solid-svg-icons';
 
 const Experience = () => {
   const { id } = useParams();
@@ -31,6 +31,10 @@ const Experience = () => {
           <p className='text-xl gap-2 flex items-center'>
             <FontAwesomeIcon icon={faLocationDot} />
             {experience.location}
+          </p>
+          <p className='text-xl gap-2 flex items-center'>
+            <FontAwesomeIcon icon={faBriefcase} />
+            {experience.employment}
           </p>
         </div>
       </div>
