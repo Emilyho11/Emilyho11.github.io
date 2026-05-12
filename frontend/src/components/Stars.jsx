@@ -79,7 +79,9 @@ const Stars = () => {
             width: pos.size,
             height: pos.size,
             opacity: pos.opacity,
-            boxShadow: '0 0 8px 2px #fff'
+            boxShadow: '0 0 8px 2px #fff',
+            animation: `twinkle 2s infinite ease-in-out`,
+            animationDelay: `${Math.random() * 2}s`,
           }}
         />
       ))}

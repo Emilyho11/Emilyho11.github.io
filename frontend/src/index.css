@@ -64,3 +64,8 @@ body::before {
 .stars-popup-bg {
   background: radial-gradient(circle at 20% 40%, #313156, transparent 90%), radial-gradient(circle at 90% 10%, #51396f);
 }
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}

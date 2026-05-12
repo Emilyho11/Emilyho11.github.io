@@ -6,7 +6,7 @@ import Hobbies from './pages/Hobbies.jsx'
 import { HashRouter, Routes, Route } from "react-router-dom";
 import Footer from './components/Footer.jsx'
 import Stars from './components/Stars.jsx';
-import Experience from './pages/Experience.jsx';
+import Experience from './pages/ExperiencePage.jsx';
 
 function App() {
 
