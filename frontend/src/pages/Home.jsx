@@ -42,12 +42,12 @@ const Home = () => {
   return (
     <ContentContainer>
       <div className='bg-dark_blue min-h-screen'>
-        <section id="intro-section" className="flex flex-col items-center justify-center h-screen gap-4 text-white">
+        <section id="intro-section" className="flex flex-col min-h-[calc(100vh-80px)] items-center justify-center text-white">
           <div className='flex flex-col items-center justify-center h-full gap-4 text-white'>
             <div className='flex items-center justify-center gap-20 flex-col lg:flex-row'>
               <div className='flex flex-col items-center'>
-                <img src={profilePic} alt="Profile" className='w-72 h-96 rounded-t-lg object-cover'/>
-                <div className="w-72 bg-buttons_purple rounded-b-lg p-4 justify-center text-white items-center flex flex-col">
+                <img src={profilePic} alt="Profile" className='w-full h-96 rounded-t-lg object-cover'/>
+                <div className="w-full bg-buttons_purple rounded-b-lg p-4 justify-center text-white items-center flex flex-col">
                   <h1 className="text-2xl font-bold text-white">Emily Ho</h1>
                   <div className='flex text-xl gap-2 mt-2'>
                   <a href="https://github.com/Emilyho11" target="_blank" rel="noopener noreferrer" className='text-white hover:text-main_purple'>
@@ -59,16 +59,16 @@ const Home = () => {
                 </div>
                 </div>
               </div>
-              <div className='justify-center items-center flex flex-col max-w-2xl'>
-                <h2 className={`text-5xl font-bold mb-12 ${animate ? 'animate-fadeUp' : ''}`} id='role'>
+              <div className='justify-center items-center flex flex-col'>
+                <h2 className={`text-6xl font-bold mb-12 ${animate ? 'animate-fadeUp' : ''}`} id='role'>
                   {currentRole}
                 </h2>
                 <p className='text-2xl text-center max-w-2xl border-t-2 pt-8'>
                   I'm a software engineer with a passion for building impactful, automated projects. Welcome to my personal website where you can learn more about me and my work.
                 </p>
-                <button className='mt-12 px-6 py-3 bg-buttons_purple text-white rounded-lg hover:bg-main_purple transition-colors duration-300'>
+                <button className='text-xl mt-12 px-6 py-3 bg-buttons_purple text-white rounded-lg hover:bg-main_purple transition-colors duration-300'>
                   <a href="/#Projects">
-                    View my Projects
+                    View Projects
                     <FontAwesomeIcon icon={faAngleRight} className='ml-2 text-white' />
                   </a>
                 </button>
