@@ -117,8 +117,37 @@ const Home = () => {
         </section>
 
         {/* Contact Section */}
-        <section id="contact-section" className="py-20 text-white">
-          Contact Me
+        <section id="contact-section" className="py-20 text-white h-screen">
+          <div className='max-w-4xl mx-auto px-4'>
+            <h2 className="text-4xl font-bold mb-6">Contact Me</h2>
+            <form className='w-full flex flex-col gap-6'>
+              <div className='md:flex gap-6'>
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  className='w-full px-5 py-3 rounded-lg bg-white/80 text-dark_purple placeholder-dark_purple focus:outline-none focus:ring-2 focus:ring-main_purple transition'
+                  required
+                />
+                <input
+                  type="email"
+                  placeholder="Your Email"
+                  className='w-full px-5 py-3 rounded-lg bg-white/80 text-dark_purple placeholder-dark_purple focus:outline-none focus:ring-2 focus:ring-main_purple transition'
+                  required
+                />
+              </div>
+              <textarea
+                placeholder="Your Message"
+                className='w-full px-5 py-3 rounded-lg bg-white/80 text-dark_purple placeholder-dark_purple focus:outline-none focus:ring-2 focus:ring-main_purple transition min-h-32'
+                required
+              ></textarea>
+              <button
+                type="submit"
+                className='self-end px-6 py-3 bg-buttons_purple text-white rounded-lg hover:bg-main_purple transition-colors duration-300'
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
         </section>
       </div>
     </ContentContainer>
