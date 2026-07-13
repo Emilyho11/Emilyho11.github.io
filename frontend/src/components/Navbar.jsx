@@ -75,6 +75,14 @@ const Navbar = () => {
               >
                 Skills
               </HashLink>
+              <HashLink
+                smooth
+                to="/#contact-section"
+                className="py-2 px-4 text-white hover:underline"
+                onClick={() => setAboutDropdown(false)}
+              >
+                Contact Me
+              </HashLink>
             </div>
           )}
         </div>

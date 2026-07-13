@@ -8,6 +8,18 @@ import Footer from './components/Footer.jsx'
 import Stars from './components/Stars.jsx';
 import Experience from './pages/ExperiencePage.jsx';
 import ProjectsPage from './pages/ProjectsPage.jsx';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 function App() {
 
@@ -15,6 +27,7 @@ function App() {
     <>
       <Stars />
       <HashRouter>
+        <ScrollToTop />
         <Navbar/>
         <Routes>
           <Route path="/" element={<Home />} />

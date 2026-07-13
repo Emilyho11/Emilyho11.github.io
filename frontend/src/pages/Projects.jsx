@@ -10,7 +10,7 @@ const Projects = () => {
     <ContentContainer>
       <h1 className='text-white text-2xl'>PROJECTS</h1>
       <div className='min-h-screen'>
-        <div className='grid grid-cols-4 gap-4 mt-4'>
+        <div className='grid gap-4 mt-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
           {projects.map((project, index) => (
             <button 
               key={index} 

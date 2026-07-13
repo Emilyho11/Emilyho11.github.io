@@ -68,7 +68,7 @@ const Home = () => {
           </div>
         </div>
         <div className='flex-1 max-w-4xl'>
-          <section id="intro-section" className="flex flex-col md:min-h-[calc(100vh-150px)] items-center justify-center text-white">
+          <section id="intro-section" className="flex flex-col md:min-h-[calc(100vh-160px)] items-center justify-center text-white">
             <div className='flex flex-col items-center justify-center h-full gap-4 text-white'>
               <div className='flex items-center justify-center gap-20 flex-col lg:flex-row'>
                 <div className='justify-center items-center flex flex-col'>
@@ -89,9 +89,9 @@ const Home = () => {
             </div>
           </section>
           {/* Experience Section */}
-          <section id="experience-section" className="py-20 text-white">
+          <section id="experience-section" className="min-h-screen py-20 text-white">
             <div className="mx-auto">
-              <h2 className="text-4xl font-bold mb-12 text-center">My Work Experience</h2>
+              <h2 className="text-4xl font-bold mb-6 text-center">My Work Experience</h2>
               <div className='flex gap-8 pb-4 justify-center flex-wrap text-center'>
                 {experiences.map((exp, index) => (
                   <div
@@ -109,7 +109,7 @@ const Home = () => {
             </div>
           </section>
           {/* Skills Section */}
-          <section id="skills-section" className="py-20 text-white">
+          <section id="skills-section" className="min-h-screen py-20 text-white">
             <div className="mx-auto max-w-2xl">
               <h2 className="text-4xl font-bold mb-6 text-center">Skills</h2>
               <div className='justify-center'>
@@ -130,7 +130,7 @@ const Home = () => {
             </div>
           </section>
           {/* Contact Section */}
-          <section id="contact-section" className="py-20 text-white">
+          <section id="contact-section" className="min-h-screen py-20 text-white">
             <div className='mx-auto max-w-2xl'>
               <h2 className="text-4xl font-bold mb-6 text-center">Contact Me</h2>
               <form className='w-full flex flex-col gap-6'>
