@@ -48,9 +48,9 @@ const Home = () => {
 
   return (
     <ContentContainer>
-      <div className='min-h-screen flex flex-col lg:flex-row justify-center'>
-        <div className='lg:flex flex-col items-center justify-center lg:sticky lg:top-0 h-screen'>
-          <img src={profilePic} alt="Profile" className='w-full h-96 rounded-t-lg object-cover'/>
+      <div className='min-h-screen flex flex-col md:flex-row justify-center gap-8'>
+        <div className='w-full max-w-sm mx-auto md:mx-0 md:w-80 lg:w-96 md:sticky md:top-14 md:self-start pt-16'>
+          <img src={profilePic} alt="Profile" className="w-full object-cover rounded-t-lg"/>
           <div className="w-full bg-buttons_purple rounded-b-lg p-4 justify-center text-white items-center flex flex-col">
             <h1 className="text-2xl font-bold text-white">Emily Ho</h1>
             <div className='flex text-2xl gap-2 mt-2'>
@@ -68,17 +68,17 @@ const Home = () => {
           </div>
         </div>
         <div className='flex-1 max-w-4xl'>
-          <section id="intro-section" className="flex flex-col min-h-[calc(100vh-80px)] items-center justify-center text-white">
+          <section id="intro-section" className="flex flex-col md:min-h-[calc(100vh-150px)] items-center justify-center text-white">
             <div className='flex flex-col items-center justify-center h-full gap-4 text-white'>
               <div className='flex items-center justify-center gap-20 flex-col lg:flex-row'>
                 <div className='justify-center items-center flex flex-col'>
-                  <h2 className={`text-6xl font-bold mb-12 ${animate ? 'animate-fadeUp' : ''}`} id='role'>
+                  <h2 className={`text-4xl sm:text-5xl lg:text-6xl font-bold mb-12 ${animate ? 'animate-fadeUp' : ''}`} id='role'>
                     {currentRole}
                   </h2>
-                  <p className='text-2xl text-center max-w-2xl border-t-2 pt-8'>
+                  <p className='text-base sm:text-lg lg:text-2xl text-center max-w-2xl border-t-2 pt-6 lg:pt-8'>
                     I'm a software engineer with a passion for building impactful, automated projects. Welcome to my personal website where you can learn more about me and my work.
                   </p>
-                  <button className='text-xl mt-12 px-6 py-3 bg-buttons_purple text-white rounded-lg hover:bg-main_purple transition-colors duration-300'>
+                  <button className='text-lg mt-12 px-6 py-3 bg-buttons_purple text-white rounded-lg hover:bg-main_purple transition-colors duration-300'>
                     <a href="/#Projects">
                       View Projects
                       <FontAwesomeIcon icon={faAngleRight} className='ml-2 text-white' />
